@@ -29,4 +29,8 @@ class AskMeViewModel: ObservableObject {
             }
         }
     }
+
+    func getWordViewData() -> WordViewData? {
+        return wordViewData
+    }
 }

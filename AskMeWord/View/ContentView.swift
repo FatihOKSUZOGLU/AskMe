@@ -1,3 +1,10 @@
+//
+//  ContentView.swift
+//  AskMeWord
+//
+//  Created by Fatih OKSUZOGLU on 22.08.2023.
+//
+
 import SwiftUI
 
 struct ContentView: View {

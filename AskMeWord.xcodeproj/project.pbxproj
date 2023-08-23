@@ -11,12 +11,12 @@
 		A75831712A900E1000D0A6DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75831702A900E1000D0A6DE /* ContentView.swift */; };
 		A75831732A900E1100D0A6DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A75831722A900E1100D0A6DE /* Assets.xcassets */; };
 		A75831762A900E1100D0A6DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A75831752A900E1100D0A6DE /* Preview Assets.xcassets */; };
+		A7B0F8D52A96B6FD00A9282E /* Rand10ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B0F8D42A96B6FD00A9282E /* Rand10ViewModel.swift */; };
 		A7C942492A90AEDB00F2EABB /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C942482A90AEDB00F2EABB /* WordModel.swift */; };
 		A7C9424B2A90B31300F2EABB /* Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9424A2A90B31300F2EABB /* Fetch.swift */; };
 		A7C9424E2A90F2BA00F2EABB /* AskMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9424D2A90F2BA00F2EABB /* AskMeView.swift */; };
 		A7C942502A91425900F2EABB /* App2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9424F2A91425900F2EABB /* App2.swift */; };
-		A7CB12EE2A93F74F001C0DB3 /* Rand10Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB12ED2A93F74F001C0DB3 /* Rand10Word.swift */; };
-		A7D921692A95238D006CE08E /* AskMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D921682A95238D006CE08E /* AskMeController.swift */; };
+		A7CB12EE2A93F74F001C0DB3 /* Rand10View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB12ED2A93F74F001C0DB3 /* Rand10View.swift */; };
 		A7D9216C2A952523006CE08E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9216B2A952523006CE08E /* Configuration.swift */; };
 		A7D9216E2A95259F006CE08E /* AskMeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9216D2A95259F006CE08E /* AskMeViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -27,12 +27,12 @@
 		A75831702A900E1000D0A6DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A75831722A900E1100D0A6DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A75831752A900E1100D0A6DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A7B0F8D42A96B6FD00A9282E /* Rand10ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rand10ViewModel.swift; sourceTree = "<group>"; };
 		A7C942482A90AEDB00F2EABB /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 		A7C9424A2A90B31300F2EABB /* Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch.swift; sourceTree = "<group>"; };
 		A7C9424D2A90F2BA00F2EABB /* AskMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskMeView.swift; sourceTree = "<group>"; };
 		A7C9424F2A91425900F2EABB /* App2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App2.swift; sourceTree = "<group>"; };
-		A7CB12ED2A93F74F001C0DB3 /* Rand10Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rand10Word.swift; sourceTree = "<group>"; };
-		A7D921682A95238D006CE08E /* AskMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskMeController.swift; sourceTree = "<group>"; };
+		A7CB12ED2A93F74F001C0DB3 /* Rand10View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rand10View.swift; sourceTree = "<group>"; };
 		A7D9216B2A952523006CE08E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A7D9216D2A95259F006CE08E /* AskMeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskMeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +67,7 @@
 		A758316D2A900E1000D0A6DE /* AskMeWord */ = {
 			isa = PBXGroup;
 			children = (
-				A7D921672A951C42006CE08E /* Controller */,
+				A7B0F8D32A96A8D300A9282E /* ViewModel */,
 				A7C942472A90AEA900F2EABB /* Model */,
 				A758317E2A90122800D0A6DE /* Main */,
 				A758317D2A90120C00D0A6DE /* View */,
@@ -101,7 +101,7 @@
 				A75831702A900E1000D0A6DE /* ContentView.swift */,
 				A7C9424D2A90F2BA00F2EABB /* AskMeView.swift */,
 				A7C9424F2A91425900F2EABB /* App2.swift */,
-				A7CB12ED2A93F74F001C0DB3 /* Rand10Word.swift */,
+				A7CB12ED2A93F74F001C0DB3 /* Rand10View.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,21 +114,21 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		A7B0F8D32A96A8D300A9282E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A7D9216D2A95259F006CE08E /* AskMeViewModel.swift */,
+				A7B0F8D42A96B6FD00A9282E /* Rand10ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A7C942472A90AEA900F2EABB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A7C942482A90AEDB00F2EABB /* WordModel.swift */,
-				A7D9216D2A95259F006CE08E /* AskMeViewModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A7D921672A951C42006CE08E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A7D921682A95238D006CE08E /* AskMeController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,12 +202,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7C942502A91425900F2EABB /* App2.swift in Sources */,
-				A7CB12EE2A93F74F001C0DB3 /* Rand10Word.swift in Sources */,
+				A7CB12EE2A93F74F001C0DB3 /* Rand10View.swift in Sources */,
+				A7B0F8D52A96B6FD00A9282E /* Rand10ViewModel.swift in Sources */,
 				A7C9424B2A90B31300F2EABB /* Fetch.swift in Sources */,
 				A7D9216C2A952523006CE08E /* Configuration.swift in Sources */,
 				A7C9424E2A90F2BA00F2EABB /* AskMeView.swift in Sources */,
 				A75831712A900E1000D0A6DE /* ContentView.swift in Sources */,
-				A7D921692A95238D006CE08E /* AskMeController.swift in Sources */,
 				A758316F2A900E1000D0A6DE /* AskMeWordApp.swift in Sources */,
 				A7D9216E2A95259F006CE08E /* AskMeViewModel.swift in Sources */,
 				A7C942492A90AEDB00F2EABB /* WordModel.swift in Sources */,
