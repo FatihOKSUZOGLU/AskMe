@@ -7,30 +7,30 @@
 import Combine
 import Foundation
 
-// Dinamik obje ile ilgili olası hata durumlarını temsil eden enum
+// Enum representing possible error cases related to dynamic objects
 enum DynamicObjectError: Error {
-    case invalidURL // Geçersiz URL hatası
-    case networkError(Error) // Ağ hatası
-    case decodingError(Error) // Çözme (decode) hatası
+    case invalidURL // Invalid URL error
+    case networkError(Error) // Network error
+    case decodingError(Error) // Decoding error
 }
 
 func fetchDynamicObject<T: Decodable>(from url: URL, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
-    // URLSession kullanarak API isteği yapma
+    // Making API request using URLSession
     URLSession.shared.dataTaskPublisher(for: url)
-        .map(\.data) // Gelen verinin sadece data kısmını al
+        .map(\.data) // Extract only the data part of the incoming result
         .tryMap { data -> T in
             do {
-                // Önce T tipinde decode etmeyi dene
+                // Attempt to decode as type T
                 return try JSONDecoder().decode(T.self, from: data)
             } catch {
-                // T tipinde decode edemediyse, NoDef tipinde decode etmeyi dene
+                // If unable to decode as type T, attempt to decode as type NoDef
                 if let noDef = try? JSONDecoder().decode(NoDef.self, from: data) {
                     throw noDef
                 }
                 throw error
             }
         }
-        .receive(on: DispatchQueue.main) // Sonuçları ana kuyruğa al, UI güncellemesi için
+        .receive(on: DispatchQueue.main) // Switch to the main queue for result handling, for UI updates
         .sink { completionResult in
             switch completionResult {
             case .finished:
@@ -41,8 +41,8 @@ func fetchDynamicObject<T: Decodable>(from url: URL, responseType: T.Type, compl
         } receiveValue: { response in
             completion(.success(response))
         }
-        .store(in: &cancellables) // Cancellation işlemleri için kullanılan Set
+        .store(in: &cancellables) // Set used for cancellation purposes
 }
 
-// Combine işlemlerini takip etmek için kullanılan cancellables set'i
+// Cancellables set used to keep track of Combine operations
 private var cancellables = Set<AnyCancellable>()

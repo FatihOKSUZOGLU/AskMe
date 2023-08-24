@@ -10,43 +10,37 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                HStack(spacing: 20) {
-                    NavigationLink(destination: AskMeView()) {
-                        ContentViewButton(title: "ASK ME")
-                    }
-                    NavigationLink(destination: App2()) {
-                        ContentViewButton(title: "App2")
-                    }
-                    // Diğer butonlar
-                }
+            GeometryReader { geometry in
+                VStack(spacing: 20) {
+                    Image("homeScreen")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 10)
 
-                HStack(spacing: 20) {
-                    NavigationLink(destination: App2()) {
-                        ContentViewButton(title: "App3")
+                    Spacer()
+                    HStack(spacing: 20) {
+                        NavigationLink(destination: AskMeView()) {
+                            ContentViewButton(title: "ASK ME")
+                                .frame(maxWidth: geometry.size.width / 2, maxHeight: geometry.size.width / 2)
+                        }
+                        NavigationLink(destination: Rand10View()) {
+                            ContentViewButton(title: "Random 10 Word")
+                                .frame(maxWidth: geometry.size.width / 2, maxHeight: geometry.size.width / 2)
+                        }
                     }
-                    NavigationLink(destination: App2()) {
-                        ContentViewButton(title: "App4")
+                    NavigationLink(destination: TranslateView()) {
+                        ContentViewButton(title: "Translate")
+                            .frame(maxWidth: geometry.size.width / 2, maxHeight: geometry.size.width / 2)
                     }
-                    // Diğer butonlar
                 }
-
-                HStack(spacing: 20) {
-                    NavigationLink(destination: App2()) {
-                        ContentViewButton(title: "App5")
-                    }
-                    NavigationLink(destination: App2()) {
-                        ContentViewButton(title: "App6")
-                    }
-                    // Diğer butonlar
-                }
+                .background(Color.white)
+                .edgesIgnoringSafeArea(.all)
+                .padding(10)
             }
-            .padding()
-            .navigationBarTitle("Main Screen", displayMode: .inline) // Başlık metni ve displayMode
-            .font(.largeTitle)
-            .background(Color.gray)
         }
-        .background(Color.gray)
+        .background(Color.white)
+        .navigationBarHidden(true)
     }
 }
 
@@ -59,8 +53,7 @@ struct ContentViewButton: View {
             .foregroundColor(.white)
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.orange
-            )
+            .background(Color.blue)
             .cornerRadius(30)
     }
 }

@@ -21,9 +21,6 @@ struct AskMeView: View {
                         .padding()
 
                     Button("Search") {
-                        if searchWord == "" {
-                            searchWord = "word"
-                        }
                         viewModel.loadData(for: searchWord)
                     }
                     .padding(10)
